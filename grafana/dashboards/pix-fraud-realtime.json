@@ -1,0 +1,81 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 6, "x": 0, "y": 0},
+      "id": 1,
+      "options": {"reduceOptions": {"calcs": ["lastNotNull"], "values": false}, "orientation": "auto"},
+      "pluginVersion": "11.2.0",
+      "targets": [{"expr": "pix_processed_total", "refId": "A"}],
+      "title": "Volume PIX Processado",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {"defaults": {"unit": "percentunit", "decimals": 2}, "overrides": []},
+      "gridPos": {"h": 8, "w": 6, "x": 6, "y": 0},
+      "id": 2,
+      "options": {"reduceOptions": {"calcs": ["lastNotNull"], "values": false}, "orientation": "auto"},
+      "targets": [{"expr": "pix_fraud_rate", "refId": "A"}],
+      "title": "Taxa de Fraude",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {"defaults": {"unit": "ms"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 6, "x": 12, "y": 0},
+      "id": 3,
+      "options": {"reduceOptions": {"calcs": ["lastNotNull"], "values": false}, "orientation": "auto"},
+      "targets": [{"expr": "histogram_quantile(0.95, sum(rate(pix_scoring_latency_ms_bucket[5m])) by (le))", "refId": "A"}],
+      "title": "Latencia P95 Scoring",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {"defaults": {"unit": "short"}, "overrides": []},
+      "gridPos": {"h": 8, "w": 6, "x": 18, "y": 0},
+      "id": 4,
+      "options": {"reduceOptions": {"calcs": ["lastNotNull"], "values": false}, "orientation": "auto"},
+      "targets": [{"expr": "pix_alerts_total", "refId": "A"}],
+      "title": "Alertas Enviados",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {"defaults": {"unit": "ops"}, "overrides": []},
+      "gridPos": {"h": 10, "w": 12, "x": 0, "y": 8},
+      "id": 5,
+      "targets": [{"expr": "rate(pix_processed_total[1m])", "refId": "A"}],
+      "title": "Transacoes por Segundo",
+      "type": "timeseries"
+    },
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {"defaults": {"unit": "percentunit"}, "overrides": []},
+      "gridPos": {"h": 10, "w": 12, "x": 12, "y": 8},
+      "id": 6,
+      "targets": [{"expr": "rate(pix_fraud_total[5m]) / clamp_min(rate(pix_processed_total[5m]), 0.0001)", "refId": "A"}],
+      "title": "Fraude em Janela de 5m",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "style": "dark",
+  "tags": ["pix", "fraud", "realtime"],
+  "templating": {"list": []},
+  "time": {"from": "now-30m", "to": "now"},
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "PIX Fraud Realtime",
+  "uid": "pix-fraud-realtime",
+  "version": 1,
+  "weekStart": ""
+}

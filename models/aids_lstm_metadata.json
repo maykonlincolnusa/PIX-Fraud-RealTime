@@ -1,0 +1,9 @@
+{
+  "model": "AIDS-LSTM",
+  "framework": "PyTorch",
+  "sequence_length": 12,
+  "input_features": 12,
+  "trained_on": "synthetic_brazilian_pix_patterns",
+  "notes": "Run python -m src.pix.ml.train_lstm to regenerate aids_lstm.pt artifact.",
+  "version": "1.0.0"
+}

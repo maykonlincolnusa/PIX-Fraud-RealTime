@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>PIX-Fraud-RealTime</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">PIX-Fraud-RealTime</p>
+          <h1>Deteccao de fraude PIX em tempo real com Kafka + LSTM.</h1>
+          <p class="sub">
+            Pipeline de streaming, scoring em menos de 1 segundo, alertas e observabilidade ao vivo.
+          </p>
+        </div>
+        <div class="status-card">
+          <p class="status-title">System</p>
+          <div class="status-row"><span>API</span><span id="apiStatus" class="pill">checking</span></div>
+          <div class="status-row"><span>WS PIX</span><span id="wsStatus" class="pill">disconnected</span></div>
+          <div class="status-row"><span>Processadas</span><span id="processedCount" class="metric">0</span></div>
+          <div class="status-row"><span>Fraudes</span><span id="fraudCount" class="metric">0</span></div>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Score PIX</h2>
+          <form id="pixForm">
+            <label>
+              Pagador
+              <input name="payer_id" required value="payer_0001" />
+            </label>
+            <label>
+              Recebedor
+              <input name="payee_id" required value="payee_0100" />
+            </label>
+            <div class="row">
+              <label>
+                Valor (R$)
+                <input name="amount" type="number" step="0.01" required value="2500" />
+              </label>
+              <label>
+                Cidade
+                <input name="city" value="Sao Paulo" />
+              </label>
+            </div>
+            <div class="row">
+              <label>
+                Beneficiario novo
+                <select name="is_new_beneficiary">
+                  <option value="false" selected>false</option>
+                  <option value="true">true</option>
+                </select>
+              </label>
+              <label>
+                Device trust
+                <input name="device_trust_score" type="number" min="0" max="1" step="0.01" value="0.9" />
+              </label>
+            </div>
+            <button type="submit">Processar transacao PIX</button>
+          </form>
+          <p id="pixResult" class="hint"></p>
+        </div>
+
+        <div class="card">
+          <h2>Streaming mock</h2>
+          <form id="streamForm">
+            <div class="row">
+              <label>
+                TPS
+                <input name="tps" type="number" min="1" max="100" value="10" />
+              </label>
+              <label>
+                Duracao (s)
+                <input name="duration" type="number" min="1" max="600" value="30" />
+              </label>
+            </div>
+            <label>
+              Taxa de fraude
+              <input name="fraud_ratio" type="number" min="0" max="1" step="0.01" value="0.12" />
+            </label>
+            <button type="submit">Publicar no Kafka</button>
+          </form>
+          <p class="hint">Esse endpoint publica eventos sinteticos no topico `pix.transactions`.</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Ultimas decisoes PIX</h2>
+          <ul id="pixFeed" class="list"></ul>
+        </div>
+        <div class="card">
+          <h2>Metrica runtime</h2>
+          <div class="graph-summary">
+            <div><p class="label">Fraud Rate</p><p id="fraudRate" class="value">0%</p></div>
+            <div><p class="label">Latencia media</p><p id="avgLatency" class="value">0 ms</p></div>
+            <div><p class="label">Ultima atualizacao</p><p id="lastUpdate" class="value">-</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
