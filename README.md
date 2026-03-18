@@ -1,9 +1,14 @@
+Entendido! Vou colar o README completo aqui no chat para você copiar direto. 👇
+
+---
+
+```markdown
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000d0a,40:003322,80:005c3a,100:00a86b&height=230&section=header&text=PIX%20Fraud%20RealTime&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=%3C1s%20Real-Time%20Fraud%20Detection%20for%20Brazilian%20PIX%20Payments&descAlignY=60&descSize=17&animation=fadeIn" alt="PIX Fraud RealTime Banner"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Latência-&lt;%201s-00e676?style=for-the-badge&logo=lightning&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Latência-<%201s-00e676?style=for-the-badge&logoColor=black"/>
   <img src="https://img.shields.io/badge/FastAPI-WebSocket-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
   <img src="https://img.shields.io/badge/Kafka-Redpanda-FF4343?style=for-the-badge&logo=apachekafka&logoColor=white"/>
   <img src="https://img.shields.io/badge/PyTorch-LSTM%20AIDS-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
@@ -13,7 +18,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Prometheus-Métricas-E6522C?style=for-the-badge&logo=prometheus&logoColor=white"/>
   <img src="https://img.shields.io/badge/Grafana-Dashboards-F46800?style=for-the-badge&logo=grafana&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Zero--Trust-Security-00C853?style=for-the-badge&logo=shield&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Zero--Trust-Security-00C853?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/SELS-Immutable%20Ledger-1565c0?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/LGPD-Compliant-7B1FA2?style=for-the-badge"/>
 </p>
@@ -27,9 +32,7 @@
 </p>
 
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=19&pause=900&color=00E676&center=true&vCenter=true&width=780&lines=PIX+Transaction+Scored+in+%3C1+Second;Kafka+Streaming+%E2%86%92+LSTM+AIDS+%E2%86%92+Zero-Trust+Decision;SELS+Hash-Chain+%7C+Immutable+Audit+Ledger;Telegram+%2B+WhatsApp+Real-Time+Fraud+Alerts;Sovereign+AI+Security+Platform+Integration;BACEN+PIX+%7C+LGPD+Compliant+%7C+AWS+sa-east-1" alt="Typing SVG"/>
-  </a>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=19&pause=900&color=00E676&center=true&vCenter=true&width=780&lines=PIX+Transaction+Scored+in+%3C1+Second;Kafka+Streaming+%E2%86%92+LSTM+AIDS+%E2%86%92+Zero-Trust+Decision;SELS+Hash-Chain+%7C+Immutable+Audit+Ledger;Telegram+%2B+WhatsApp+Real-Time+Fraud+Alerts;Sovereign+AI+Security+Platform+Integration;BACEN+PIX+%7C+LGPD+Compliant+%7C+AWS+sa-east-1" alt="Typing SVG"/>
 </p>
 
 ---
@@ -96,23 +99,23 @@ flowchart LR
 
     subgraph ZT ["🔐 Zero-Trust Layer"]
         direction TB
-        ZT1["x-api-key\nx-service-id\nx-signature"]
+        ZT1["x-api-key · x-service-id · x-signature"]
     end
 
-    ZT --> KP
+    ZT --> STREAM
 
-    subgraph STREAM ["⚡ Kafka Streaming · Redpanda"]
+    subgraph STREAM ["⚡ Kafka · Redpanda"]
         direction TB
         KP["Producer\nPIX Events"] --> KC["Consumer\nRealtime Pipeline"]
     end
 
-    KC --> FE
+    KC --> ML
 
     subgraph ML ["🤖 ML Pipeline"]
         direction TB
         FE["Feature Engineering\nPIX Especializado"] --> LS["LSTM AIDS\nPyTorch Score"]
-        LS --> RS["Risk Rules\nEngine"]
-        RS --> ES["Ensemble\nFraud Decision"]
+        LS --> RS["Risk Rules Engine"]
+        RS --> ES["Ensemble Decision"]
     end
 
     ES --> SELS["🔗 SELS\nHash-Chain Ledger"]
@@ -122,8 +125,8 @@ flowchart LR
 
     subgraph OB ["📊 Observability"]
         direction TB
-        PR["Prometheus\nMetrics"] --> GR["Grafana\nDashboards"]
-        TS[("TimescaleDB\nTime-Series")]
+        PR["Prometheus"] --> GR["Grafana Dashboards"]
+        TS[("TimescaleDB")]
     end
 
     ES --> SOV["🛡️ Sovereign AI\nSecurity Platform"]
@@ -152,21 +155,18 @@ flowchart LR
 ║  Storage              TimescaleDB (PostgreSQL time-series)           ║
 ║                       SELS — Secure Event Ledger (hash-chain)        ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  Segurança            Zero-Trust Middleware (API Key + Service ID)   ║
-║                       SELS Hash-Chain · Assinatura opcional          ║
+║  Segurança            Zero-Trust Middleware                          ║
+║                       SELS Hash-Chain · Assinatura HMAC opcional     ║
 ║                       LGPD Compliance · Eventos anonimizados         ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  Alertas              Telegram Bot API                               ║
-║                       WhatsApp Business API                          ║
+║  Alertas              Telegram Bot API · WhatsApp Business API       ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  Observabilidade      Prometheus · Grafana Dashboards                ║
-║                       Latência p99 · Throughput · Fraud Rate         ║
+║  Observabilidade      Prometheus · Grafana (pré-provisionado)        ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  Infraestrutura       Terraform · AWS sa-east-1 (Brasil)             ║
+║  Infraestrutura       Terraform · AWS sa-east-1 (São Paulo)          ║
 ║                       Docker · Docker Compose                        ║
 ╠══════════════════════════════════════════════════════════════════════╣
 ║  Integração           Sovereign AI Security Platform (webhook)       ║
-║                       Fraud-Master-Bank (base reutilizada)           ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -202,17 +202,17 @@ PIX-Fraud-RealTime/
 ├── 🤖 models/
 │   └── aids_scaler.json       # Scaler serializado do modelo LSTM
 │
-├── 📊 prometheus/             # Configuração Prometheus (scrape configs)
+├── 📊 prometheus/             # Configuração de scrape configs
 ├── 📈 grafana/
 │   ├── dashboards/            # Dashboards JSON pré-provisionados
-│   └── provisioning/          # Auto-provisionamento Grafana
+│   └── provisioning/          # Auto-provisionamento
 │
 ├── ☁️ infrastructure/
-│   └── terraform/             # IaC AWS sa-east-1 (módulo mínimo)
+│   └── terraform/             # IaC AWS sa-east-1
 │
 ├── 🐳 docker/                 # Dockerfiles por serviço
-├── 📓 notebooks/              # Análise exploratória e experimentos
-├── 🧪 tests/                  # pytest (inclui validação de latência <1s)
+├── 📓 notebooks/              # Análise exploratória
+├── 🧪 tests/                  # pytest + validação de latência <1s
 ├── ⚙️ config/                 # Configurações por ambiente
 │
 ├── docker-compose.yml
@@ -266,10 +266,10 @@ x-service-id:  <identificador do serviço>
 x-signature:   <assinatura HMAC opcional>
 ```
 
-**SELS (Secure Event Ledger System):** cada decisão de fraude gera um registro imutável via hash-chain:
+**SELS (Secure Event Ledger System):** cada decisão gera um registro imutável via hash-chain:
 
 ```
-event_n.hash = SHA256(event_n.payload + event_{n-1}.hash)
+hash_n = SHA256(payload_n + hash_{n-1})
 ```
 
 Auditável via `GET /api/v1/pix/sels/verify`.
@@ -279,11 +279,7 @@ Auditável via `GET /api/v1/pix/sels/verify`.
 <details>
 <summary><b>🛡️ src/sovereign — Sovereign AI Integration</b></summary>
 
-Quando fraude é detectada, o módulo envia um evento anonimizado para a Sovereign AI Security Platform com:
-
-- Perfil de compliance BR/LGPD
-- Score e reason codes sem dados pessoais
-- Timestamp e hash SELS para correlação forense
+Quando fraude é detectada, envia evento anonimizado com perfil de compliance BR/LGPD — sem dados pessoais, apenas score, reason codes e hash SELS para correlação forense.
 
 Configure via `.env`: `SOVEREIGN_PLATFORM_WEBHOOK` e `SOVEREIGN_PLATFORM_TOKEN`.
 
@@ -298,10 +294,10 @@ Configure via `.env`: `SOVEREIGN_PLATFORM_WEBHOOK` e `SOVEREIGN_PLATFORM_TOKEN`.
 ```bash
 Docker Desktop  >= 24.x
 docker compose  >= 2.x
-Python          >= 3.11    # para execução local
+Python          >= 3.11
 ```
 
-### ⚡ Stack Completa com Docker
+### ⚡ Stack Completa
 
 <table>
 <tr>
@@ -313,15 +309,13 @@ Python          >= 3.11    # para execução local
 
 ```bash
 # 1. Clone
-git clone https://github.com/maykonlincolnusa/\
-PIX-Fraud-RealTime.git
+git clone https://github.com/maykonlincolnusa/PIX-Fraud-RealTime.git
 cd PIX-Fraud-RealTime
 
 # 2. Variáveis de ambiente
 cp .env.example .env
-# Configure Telegram, WhatsApp e Sovereign
 
-# 3. Subir stack completa
+# 3. Subir stack
 docker compose up -d --build
 ```
 
@@ -330,15 +324,13 @@ docker compose up -d --build
 
 ```powershell
 # 1. Clone
-git clone https://github.com/maykonlincolnusa/`
-PIX-Fraud-RealTime.git
+git clone https://github.com/maykonlincolnusa/PIX-Fraud-RealTime.git
 cd PIX-Fraud-RealTime
 
 # 2. Variáveis de ambiente
 Copy-Item .env.example .env
-# Configure Telegram, WhatsApp e Sovereign
 
-# 3. Subir stack completa
+# 3. Subir stack
 docker compose up -d --build
 ```
 
@@ -350,11 +342,11 @@ docker compose up -d --build
 
 ## 🌐 Serviços & Portas
 
-| Serviço | URL / Endereço | Descrição |
+| Serviço | URL | Descrição |
 |---|---|---|
 | ⚡ **API REST** | http://localhost:8000 | FastAPI principal |
 | 📄 **Swagger UI** | http://localhost:8000/docs | Documentação interativa |
-| 🔌 **WebSocket PIX** | `ws://localhost:8000/ws/pix` | Broadcast realtime de decisões |
+| 🔌 **WebSocket PIX** | `ws://localhost:8000/ws/pix` | Broadcast realtime |
 | 📈 **Prometheus** | http://localhost:9090 | Métricas brutas |
 | 📊 **Grafana** | http://localhost:3000 | Dashboards (`admin/admin`) |
 | 🗄️ **TimescaleDB** | `localhost:5432` | Série temporal de eventos |
@@ -369,14 +361,14 @@ docker compose up -d --build
 | Método | Endpoint | Descrição |
 |---|---|---|
 | `POST` | `/api/v1/pix/score` | Score de fraude online (<1s) |
-| `POST` | `/api/v1/pix/mock/publish` | Publicar stream sintético no Kafka |
-| `GET` | `/api/v1/pix/sels/verify` | Verificar integridade do SELS hash-chain |
+| `POST` | `/api/v1/pix/mock/publish` | Stream sintético no Kafka |
+| `GET` | `/api/v1/pix/sels/verify` | Verificar integridade do ledger |
 | `GET` | `/api/v1/pix/alerts` | Listar alertas de fraude PIX |
 | `GET` | `/ws/pix` | WebSocket — broadcast realtime |
 | `GET` | `/health` | Health check |
 | `GET` | `/metrics` | Prometheus metrics |
 
-### Exemplo — Score Online
+### Score Online
 
 ```bash
 curl -X POST http://localhost:8000/api/v1/pix/score \
@@ -399,18 +391,18 @@ curl -X POST http://localhost:8000/api/v1/pix/score \
 
 ```json
 {
-  "transaction_id":  "PIX-20250318-0042a7",
-  "fraud_score":     0.91,
-  "decision":        "BLOCK",
-  "latency_ms":      87,
-  "reason_codes":    ["RC-NEW-BENEFICIARY", "RC-HIGH-VELOCITY", "RC-LOW-DEVICE-TRUST"],
-  "sels_hash":       "a3f8c2d1e9b47...",
+  "transaction_id":   "PIX-20250318-0042a7",
+  "fraud_score":      0.91,
+  "decision":         "BLOCK",
+  "latency_ms":       87,
+  "reason_codes":     ["RC-NEW-BENEFICIARY", "RC-HIGH-VELOCITY", "RC-LOW-DEVICE-TRUST"],
+  "sels_hash":        "a3f8c2d1e9b47...",
   "alert_dispatched": true,
-  "timestamp":       "2025-03-18T14:22:03Z"
+  "timestamp":        "2025-03-18T14:22:03Z"
 }
 ```
 
-### Exemplo — Publicar Stream Sintético
+### Stream Sintético Kafka
 
 ```bash
 curl -X POST http://localhost:8000/api/v1/pix/mock/publish \
@@ -433,55 +425,51 @@ curl -X POST http://localhost:8000/api/v1/pix/mock/publish \
 ║  LSTM AIDS (Anomaly Intrusion Detection System) · PyTorch            ║
 ╠══════════════════════════════════════════════════════════════════════╣
 ║  Arquitetura    LSTM bidirecional + camada densa de classificação    ║
-║  Entrada        Sequência de features PIX normalizadas (scaler JSON) ║
+║  Entrada        Sequência de features PIX normalizadas               ║
 ║  Saída          Probabilidade de fraude [0.0 – 1.0]                 ║
 ║  Threshold      Configurável via .env (default: 0.72)               ║
-║  Latência       <50ms de inferência (excluindo feature pipeline)     ║
+║  Latência       <50ms de inferência                                  ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
 
-**Treinar novo checkpoint:**
-
 ```bash
-# Local
+# Treinar novo checkpoint
 python -m src.pix.ml.train_lstm
 
-# Artefatos gerados
-# models/aids_lstm.pt          ← checkpoint PyTorch
-# models/aids_scaler.json      ← parâmetros de normalização
+# Artefatos gerados:
+# models/aids_lstm.pt       ← checkpoint PyTorch
+# models/aids_scaler.json   ← parâmetros de normalização
 ```
 
 ---
 
 ## 🔗 SELS — Ledger Imutável
 
-O **Secure Event Ledger System** garante cadeia de custódia forense para cada decisão de fraude:
-
 ```
 ╔══════════════════════════════════════════════════════════════════════╗
-║  SELS HASH-CHAIN                                                     ║
+║  SELS · SECURE EVENT LEDGER SYSTEM                                   ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  Algoritmo      SHA-256 encadeado (hash_n = SHA256(payload + h_{n-1})║
-║  Storage        data/sels_ledger.jsonl  (append-only local)          ║
-║                 Tabela SQL: sels_events  (PostgreSQL)                ║
-║  Verificação    GET /api/v1/pix/sels/verify                          ║
-║  Auditoria      Cada evento: timestamp · decision · hash · score     ║
+║  Algoritmo    SHA-256 encadeado                                      ║
+║               hash_n = SHA256(payload_n + hash_{n-1})               ║
+║  Storage      data/sels_ledger.jsonl  (append-only)                  ║
+║               Tabela SQL: sels_events                                ║
+║  Verificação  GET /api/v1/pix/sels/verify                            ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
 
 ```mermaid
 graph LR
     E0["Genesis Block\nhash_0 = SHA256(seed)"]
-    E1["Evento #1\nfraud_score=0.91\nhash_1 = SHA256(e1+h0)"]
-    E2["Evento #2\nfraud_score=0.23\nhash_2 = SHA256(e2+h1)"]
-    E3["Evento #N\nhash_N = SHA256(eN+h_{N-1})"]
+    E1["Evento #1\nfraud_score=0.91\nhash_1=SHA256(e1+h0)"]
+    E2["Evento #2\nfraud_score=0.23\nhash_2=SHA256(e2+h1)"]
+    EN["Evento #N\nhash_N=SHA256(eN+h_N-1)"]
 
-    E0 --> E1 --> E2 --> E3
+    E0 --> E1 --> E2 --> EN
 
     style E0 fill:#001a0d,stroke:#00e676,color:#fff
     style E1 fill:#001a0d,stroke:#00e676,color:#fff
     style E2 fill:#001a0d,stroke:#00e676,color:#fff
-    style E3 fill:#001a0d,stroke:#00e676,color:#fff
+    style EN fill:#001a0d,stroke:#00e676,color:#fff
 ```
 
 ---
@@ -490,16 +478,15 @@ graph LR
 
 ```
 ╔══════════════════════════════════════════════════════════════════════╗
-║  ZERO-TRUST MIDDLEWARE · HEADERS OBRIGATÓRIOS                        ║
+║  ZERO-TRUST MIDDLEWARE                                               ║
 ╠══════════════════════════════════════════════════════════════════════╣
 ║  x-api-key        Chave de acesso por serviço                        ║
 ║  x-service-id     Identificador único do serviço chamante            ║
-║  x-signature      Assinatura HMAC opcional (quando habilitado)       ║
+║  x-signature      Assinatura HMAC opcional                           ║
 ╠══════════════════════════════════════════════════════════════════════╣
-║  PRINCÍPIOS       Never trust, always verify                         ║
-║                   Least privilege por service-id                     ║
-║                   Audit trail SELS para cada decisão                 ║
-║  COMPLIANCE       LGPD: eventos anonimizados antes do envio externo  ║
+║  Never trust, always verify                                          ║
+║  Least privilege por service-id                                      ║
+║  LGPD: eventos anonimizados antes do envio externo                   ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -507,7 +494,7 @@ graph LR
 
 ## 🚨 Alertas em Tempo Real
 
-Configure no `.env` para receber alertas instantâneos quando fraude é detectada:
+Configure no `.env`:
 
 ```bash
 # Telegram
@@ -520,12 +507,12 @@ WHATSAPP_TOKEN=<token>
 WHATSAPP_TO=<numero-destino>
 ```
 
-**Payload de alerta enviado:**
+**Formato do alerta recebido:**
 
 ```
 🚨 FRAUDE PIX DETECTADA
-━━━━━━━━━━━━━━━━━━━━━━
-Score:    0.91 (HIGH RISK)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Score:    0.91  ·  HIGH RISK
 Decisão:  BLOCK
 Motivos:  RC-NEW-BENEFICIARY · RC-HIGH-VELOCITY
 SELS:     a3f8c2d1...
@@ -556,37 +543,31 @@ Grafana pré-provisionado com dashboards em `grafana/dashboards/` — zero confi
 
 ## 🛡️ Integração Sovereign AI
 
-Ao detectar fraude, o módulo `src/sovereign` envia evento anonimizado para a **Sovereign AI Security Platform**:
-
 ```bash
 # .env
 SOVEREIGN_PLATFORM_WEBHOOK=https://sovereign.example.com/ingest
 SOVEREIGN_PLATFORM_TOKEN=<token>
 ```
 
-O payload respeita LGPD: nenhum dado pessoal é transmitido — apenas score, reason codes, hash SELS e compliance profile `BR/LGPD`.
+Quando fraude é detectada, o módulo `src/sovereign` envia evento anonimizado respeitando LGPD: nenhum dado pessoal é transmitido — apenas score, reason codes e hash SELS para correlação forense.
 
 ---
 
 ## ☁️ Infraestrutura AWS
 
 <details>
-<summary><b>🌩️ Deploy Terraform · sa-east-1 (Brasil)</b></summary>
+<summary><b>🌩️ Deploy Terraform · sa-east-1 (São Paulo)</b></summary>
 
 ```bash
 cd infrastructure/terraform
-
-# Copiar variáveis
 cp terraform.tfvars.example terraform.tfvars
-# Edite: region, VPC CIDR, instâncias, etc.
 
-# Inicializar e aplicar
 terraform init
 terraform plan
 terraform apply
 ```
 
-Região padrão: **`sa-east-1` (São Paulo)** — menor latência para clientes brasileiros e conformidade com LGPD de armazenamento de dados no Brasil.
+Região **`sa-east-1`** garante menor latência para clientes brasileiros e conformidade com LGPD para armazenamento de dados no Brasil.
 
 </details>
 
@@ -605,7 +586,7 @@ pytest --cov=src --cov-report=html
 pytest tests/test_pix_latency.py -v
 ```
 
-> O teste de latência valida que o pipeline completo — desde a requisição até a resposta com score — é concluído em **menos de 1 segundo** sob carga normal.
+> O teste de latência valida que o pipeline completo — requisição → score → resposta — é concluído em **menos de 1 segundo** sob carga normal.
 
 ---
 
@@ -644,3 +625,5 @@ Uso comercial permitido com preservação do aviso de copyright.
 <p align="center">
   <sub>Decisão em &lt;1s · Ledger imutável · Zero-Trust nativo · LGPD compliant</sub>
 </p>
+```
+
